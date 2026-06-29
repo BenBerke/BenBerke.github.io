@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js-enabled");
+
 // ════════════════════════════════════════════════════════════
 // BERKE MEMIOGLU — PORTFOLIO SCRIPT
 // Change smaller project data here.
@@ -127,14 +129,32 @@ function setupMobileNav() {
     const isOpen = navLinks.classList.toggle("open");
     burger.classList.toggle("open", isOpen);
     burger.setAttribute("aria-expanded", String(isOpen));
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = isOpen ? "hidden" : "";
   });
 
+  // Close on link click
   navLinks.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("open");
       burger.classList.remove("open");
       burger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
     });
+  });
+
+  // Close when tapping outside the menu
+  document.addEventListener("click", (e) => {
+    if (
+      navLinks.classList.contains("open") &&
+      !navLinks.contains(e.target) &&
+      !burger.contains(e.target)
+    ) {
+      navLinks.classList.remove("open");
+      burger.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
   });
 }
 
