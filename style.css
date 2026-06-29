@@ -356,6 +356,11 @@ body::before {
   padding: 8px;
   border-radius: var(--r);
   transition: background var(--t);
+  /* Ensure reliable 44px touch target */
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 .nav-burger:hover { background: rgba(255,255,255,0.06); }
 .nav-burger span {
@@ -364,11 +369,13 @@ body::before {
   height: 2px;
   background: var(--text-dim);
   border-radius: 2px;
-  transition: transform 0.3s var(--ease), opacity 0.3s;
+  transition: transform 0.3s var(--ease), opacity 0.3s, background 0.3s;
+  will-change: transform;
 }
-.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+/* gap:5px + height:2px = 7px per step — matches translateY */
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--cyan); }
 .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background: var(--cyan); }
 
 
 /* ════════════════════════════════════════════════════════════
@@ -1202,27 +1209,27 @@ body::before {
 
 /* ════════════════════════════════════════════════════════════
    SCROLL-TRIGGERED ANIMATIONS
+   Content is visible by default so the site never breaks on mobile
    ════════════════════════════════════════════════════════════ */
 
 .animate-on-scroll {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
-}
-.animate-on-scroll.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
-/* Stagger siblings */
-.skills-grid .skill-group:nth-child(2)     { transition-delay: 0.07s; }
-.skills-grid .skill-group:nth-child(3)     { transition-delay: 0.14s; }
-.skills-grid .skill-group:nth-child(4)     { transition-delay: 0.21s; }
-.activities-grid .activity-card:nth-child(2) { transition-delay: 0.08s; }
-.activities-grid .activity-card:nth-child(3) { transition-delay: 0.16s; }
-.edu-grid .edu-card:nth-child(2)           { transition-delay: 0.08s; }
+/* Optional desktop-only animation */
+@media (min-width: 769px) {
+  .js-enabled .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+  }
 
-/* Project cards stagger via JS (inline style) */
+  .js-enabled .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 /* ════════════════════════════════════════════════════════════
@@ -1242,55 +1249,98 @@ body::before {
 
 @media (max-width: 768px) {
 
-  /* Nav — slide-down mobile menu */
+  /* ── Nav: animated slide-down mobile menu ───────────────── */
+  .nav-burger { display: flex; }
+
   .nav-links {
-    display: none;
+    /* Animate open/close with max-height instead of display toggle */
+    display: flex !important;
     position: fixed;
     top: 62px; left: 0; right: 0;
     background: rgba(8,8,14,0.97);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
-    padding: 20px 24px 28px;
+    padding: 0 20px;
     border-bottom: 1px solid var(--border);
     gap: 4px;
     z-index: 999;
+    /* Animate via max-height + opacity */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.32s var(--ease),
+                opacity    0.28s var(--ease),
+                padding    0.28s var(--ease);
   }
-  .nav-links.open { display: flex; }
-  .nav-links a     { padding: 11px 14px; width: 100%; border-radius: var(--r); font-size: 0.95rem; }
-  .nav-github-btn  { width: 100%; justify-content: center; }
-  .nav-burger      { display: flex; }
 
-  /* Hero */
+  .nav-links.open {
+    max-height: 400px;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 14px 20px 22px;
+  }
+
+  /* Bigger tap targets for mobile nav items */
+  .nav-links a {
+    padding: 13px 14px;
+    width: 100%;
+    border-radius: var(--r);
+    font-size: 0.95rem;
+    /* 44px min touch target */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-github-btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  /* ── Hero ───────────────────────────────────────────────── */
   .hero-grid        { grid-template-columns: 1fr; gap: 0; }
-  .hero-code-window { display: none; } /* Hidden on mobile — saves space */
+  .hero-code-window { display: none; }
   .hero-blob-1      { width: 300px; height: 300px; opacity: 0.3; }
   .hero-blob-2      { width: 250px; height: 250px; opacity: 0.25; }
-  .hero-buttons     { flex-direction: column; }
-  .btn              { width: 100%; }
-  .scroll-hint      { display: none; }
 
-  /* Featured */
-  .featured-card       { padding: 22px 20px; }
+  /* Full-width buttons ONLY in the hero, not site-wide */
+  .hero-buttons     { flex-direction: column; }
+  .hero-buttons .btn { width: 100%; }
+
+  .scroll-hint { display: none; }
+
+  /* ── Featured ───────────────────────────────────────────── */
+  .featured-card        { padding: 22px 20px; }
   .featured-screenshots { grid-template-columns: 1fr; }
   .featured-header      { flex-direction: column; align-items: flex-start; }
+  /* Keep featured header button normal width */
+  .featured-header .btn { width: auto; }
   .highlights-row       { grid-template-columns: 1fr 1fr; padding: 16px; gap: 12px; }
+  /* Allow stat numbers to wrap on narrow screens */
+  .highlight-block-stat .hl-stat { white-space: normal; font-size: clamp(1rem, 5vw, 1.4rem); }
 
-  /* Projects */
+  /* ── Projects ───────────────────────────────────────────── */
   .projects-grid { grid-template-columns: 1fr; }
 
-  /* Education */
+  /* ── Education ──────────────────────────────────────────── */
   .edu-grid { grid-template-columns: 1fr; }
 
-  /* Activities */
+  /* ── Activities ─────────────────────────────────────────── */
   .activities-grid { grid-template-columns: 1fr; }
 
-  /* Timeline */
+  /* ── Timeline ───────────────────────────────────────────── */
   .timeline        { padding-left: 28px; }
   .timeline-dot    { left: -28px; }
   .timeline-top    { flex-direction: column; gap: 8px; }
   .timeline-period { align-self: flex-start; }
 
+  /* ── iOS safe area insets (notched phones) ──────────────── */
+  .site-footer {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 
@@ -1299,9 +1349,16 @@ body::before {
    ════════════════════════════════════════════════════════════ */
 
 @media (max-width: 480px) {
-  .container { padding: 0 18px; }
+  .container     { padding: 0 18px; }
   .highlights-row { grid-template-columns: 1fr; }
   .featured-card  { padding: 18px 16px; }
-  .section { padding: clamp(56px, 8vw, 80px) 0; }
+  .section        { padding: clamp(56px, 8vw, 80px) 0; }
   .section-tight  { padding: clamp(48px, 7vw, 68px) 0; }
+
+  /* Slightly larger body text for readability on small screens */
+  .pc-bullets li  { font-size: 0.83rem; }
+  .featured-bullets li { font-size: 0.88rem; }
+
+  /* Stack edu-card icon + body on very narrow screens */
+  .edu-card       { flex-direction: column; gap: 12px; padding: 20px; }
 }
