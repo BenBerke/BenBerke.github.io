@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Berke Memioglu — Systems programmer building game engines, CPU renderers, and low-level software. Based in Newcastle, UK." />
+  <meta property="og:title" content="Berke Memioglu — Portfolio" />
+  <meta property="og:description" content="Systems programmer building game engines, CPU renderers, interpreters, and low-level software." />
+  <meta property="og:type" content="website" />
+  <title>Berke Memioglu — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════ NAVIGATION -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner container">
+      <a href="#home" class="nav-logo" aria-label="Home">
+        <span class="logo-bracket">&lt;</span>BM<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#featured">Engine</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li>
+          <a href="https://github.com/BenBerke" target="_blank" rel="noopener noreferrer" class="nav-github-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.11.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.18.69.8.57C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+          </a>
+        </li>
+      </ul>
+
+      <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════ HERO -->
+  <section id="home" class="hero" aria-label="Introduction">
+    <!-- Ambient glow blobs (decorative) -->
+    <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+
+    <div class="container hero-grid">
+
+      <!-- Left: text content -->
+      <div class="hero-content animate-on-scroll">
+        <span class="code-tag">// Computer Science @ Newcastle University</span>
+        <h1 class="hero-name">
+          Berke<br/>
+          <span class="gradient-text">Memioglu</span>
+        </h1>
+        <p class="hero-desc">
+          Systems programmer building game engines, CPU renderers,
+          interpreters, and low-level software. Targeting C/C++
+          graphics and engine tooling roles.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://github.com/BenBerke" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.11.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.18.69.8.57C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+          </a>
+          <a href="mailto:berkememioglu@gmail.com" class="btn btn-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+          <a href="assets/cv.pdf" download class="btn btn-outline">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: IDE code window (decorative, hidden on mobile) -->
+      <div class="hero-code-window animate-on-scroll" aria-hidden="true">
+        <div class="code-win-bar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="code-win-filename">tilky_engine.cpp</span>
+        </div>
+        <div class="code-win-body">
+          <div class="cl"><span class="co-ln">1</span> <span class="co-cmt">// Open-source game engine &amp; editor</span></div>
+          <div class="cl"><span class="co-ln">2</span> <span class="co-kw">class</span> <span class="co-cls">TilkyEngine</span> {</div>
+          <div class="cl"><span class="co-ln">3</span> <span class="co-in1"></span><span class="co-ty">Renderer</span>    renderer;</div>
+          <div class="cl"><span class="co-ln">4</span> <span class="co-in1"></span><span class="co-ty">ECS</span>         world;</div>
+          <div class="cl"><span class="co-ln">5</span> <span class="co-in1"></span><span class="co-ty">OpenAL</span> audio;</div>
+          <div class="cl"><span class="co-ln">6</span> <span class="co-in1"></span><span class="co-ty">LuaVM</span>       scripting;</div>
+          <div class="cl"><span class="co-ln">7</span> <span class="co-in1"></span><span class="co-ty">Editor</span>      editor;</div>
+          <div class="cl"><span class="co-ln">8</span> &nbsp;</div>
+          <div class="cl"><span class="co-ln">9</span> <span class="co-in1"></span><span class="co-kw">void</span> <span class="co-fn">run</span>() {</div>
+          <div class="cl"><span class="co-ln">10</span><span class="co-in2"></span><span class="co-kw">while</span> (running) {</div>
+          <div class="cl"><span class="co-ln">11</span><span class="co-in3"></span>world.<span class="co-fn">update</span>(dt);</div>
+          <div class="cl"><span class="co-ln">12</span><span class="co-in3"></span>renderer.<span class="co-fn">render</span>();</div>
+          <div class="cl"><span class="co-ln">13</span><span class="co-in3"></span>audio.<span class="co-fn">tick</span>();</div>
+          <div class="cl"><span class="co-ln">14</span><span class="co-in2"></span>}</div>
+          <div class="cl"><span class="co-ln">15</span><span class="co-in1"></span>}</div>
+          <div class="cl"><span class="co-ln">16</span>};</div>
+          <div class="cl"><span class="co-ln">17</span><span class="co-cursor">▋</span></div>
+        </div>
+      </div>
+
+    </div><!-- /hero-grid -->
+
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-hint-line"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════ FEATURED: TILKY ENGINE -->
+  <section id="featured" class="section">
+    <div class="container">
+
+      <div class="section-header animate-on-scroll">
+        <span class="code-tag">// Featured Project</span>
+        <h2 class="section-title">Tilky Engine</h2>
+        <p class="section-subtitle">Open-Source Game Engine &amp; Editor</p>
+      </div>
+
+      <article class="featured-card animate-on-scroll">
+
+        <!-- Card top accent bar -->
+        <div class="featured-accent-bar" aria-hidden="true"></div>
+
+        <!-- Header row -->
+        <div class="featured-header">
+          <div class="featured-badges">
+            <span class="pill pill-dim">Open Source</span>
+            <span class="pill pill-cyan">C++20</span>
+            <span class="pill pill-purple">Rust</span>
+          </div>
+          <a href="https://github.com/BenBerke/Tilky-Engine" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+            View on GitHub
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <!-- Screenshots — replace image paths with your actual screenshots or GIFs -->
+        <div class="featured-screenshots">
+
+          <!-- PRIMARY SCREENSHOT: Replace assets/tilky-editor.png with your editor screenshot/GIF -->
+          <figure class="shot shot-primary" data-hint="assets/tilky-editor.png">
+            <!-- ↓ REPLACE THIS: drop your editor screenshot at assets/tilky-editor.png -->
+            <img src="assets/tilky-editor.png"
+                 alt="Tilky Engine visual level editor — wall/sector tools, entity panel, texture picker"
+                 loading="lazy"
+                 onerror="this.closest('.shot').classList.add('shot-missing')" />
+            <figcaption>Editor View</figcaption>
+          </figure>
+
+          <!-- SECONDARY SCREENSHOT: Replace assets/tilky-runtime.png with your runtime screenshot/GIF -->
+          <figure class="shot shot-secondary" data-hint="assets/tilky-runtime.png">
+            <!-- ↓ REPLACE THIS: drop your runtime screenshot at assets/tilky-runtime.png -->
+            <img src="assets/tilky-runtime.png"
+                 alt="Tilky Engine runtime — sector-based 3D renderer with textured walls and billboards"
+                 loading="lazy"
+                 onerror="this.closest('.shot').classList.add('shot-missing')" />
+            <figcaption>Runtime View</figcaption>
+          </figure>
+
+        </div><!-- /featured-screenshots -->
+
+        <!-- Tech badges -->
+        <div class="tech-row">
+          <span class="tech-badge">C++</span>
+          <span class="tech-badge">C</span>
+          <span class="tech-badge">Rust</span>
+          <span class="tech-badge">OpenGL</span>
+          <span class="tech-badge">Vulkan</span>
+          <span class="tech-badge">GLSL</span>
+          <span class="tech-badge">SDL3</span>
+          <span class="tech-badge">ImGui</span>
+          <span class="tech-badge">OpenAL</span>
+          <span class="tech-badge">Tracy</span>
+          <span class="tech-badge">Box2D</span>
+        </div>
+
+       
+
+<!-- Performance & feature highlights -->
+<div class="highlights-row">
+  <div class="highlight-block">
+    <span class="hl-icon">⚙</span>
+    <span class="hl-label">Complete Engine Toolchain</span>
+    <span class="hl-desc">
+      Launcher, visual editor, OpenGL runtime, asset/project pipeline, Lua scripting, OpenAL audio, Tracy profiling, localisation tooling, and standalone export support.
+    </span>
+  </div>
+
+  <div class="highlight-block">
+    <span class="hl-icon">🎮</span>
+    <span class="hl-label">Sector-Based 3D Renderer</span>
+    <span class="hl-desc">
+      Doom/Build-inspired sector worlds with independent floor and ceiling heights, textured walls/floors, decals, billboards, sprites, depth buffering, and SSBO-backed geometry.
+    </span>
+  </div>
+
+  <div class="highlight-block">
+    <span class="hl-icon">📦</span>
+    <span class="hl-label">Data-Oriented ECS</span>
+    <span class="hl-desc">
+      Stable entity IDs and type-specific component arrays for cache-local iteration across rendering, physics, scripting, collision, and editor systems.
+    </span>
+  </div>
+
+  <div class="highlight-block">
+    <span class="hl-icon">⚡</span>
+    <span class="hl-label">Profiling & Optimisation</span>
+    <span class="hl-desc">
+      Collision uses dirty flags and current/neighbor-sector filtering. Tracy captures show a median collision pass of 44.97 microseconds with 13 entities in one sector.
+    </span>
+  </div>
+</div>
+
+<!-- Detailed bullet points -->
+<ul class="featured-bullets">
+  <li>
+    Built a complete C++20 engine/editor workflow with project launcher, visual level editor, OpenGL runtime, asset/project pipeline, Lua scripting, OpenAL positional audio, Tracy profiling, localisation tooling, and standalone export support.
+  </li>
+
+  <li>
+    Designed a sector-based 3D rendering architecture inspired by classic Doom/Build-style engines, using connected sectors with independent floor and ceiling heights, textured walls and floors, decals, billboards, sprites, depth buffering, and SSBO-backed geometry buffers.
+  </li>
+
+  <li>
+    Implemented a data-oriented ECS using stable entity IDs and type-specific component arrays, improving cache locality and keeping runtime iteration predictable for physics, scripting, rendering, collision, and editor systems.
+  </li>
+
+  <li>
+    Optimised collision detection with dirty flags and sector-aware broad-phase filtering, checking entities and walls only inside the current sector and neighbouring sectors instead of scanning the full level.
+  </li>
+
+  <li>
+    Profiled the engine with Tracy across rendering, physics, collision, scripts, and frame-level runtime systems. Representative captures show the full update loop around 425 microseconds, with rendering around 415 microseconds in the measured render zone.
+  </li>
+
+  <li>
+    Built a custom SIMD-accelerated linear algebra layer using SSE intrinsics, including __m128 register operations, alignas(16) memory alignment, anonymous unions for vector component access, and Newton-Raphson refinement for selected math operations.
+  </li>
+
+  <li>
+    Applied low-level optimisation techniques around cache-local data layout, branch-conscious control flow, memory alignment, SIMD vectorisation, and pipeline-friendly iteration in performance-sensitive systems.
+  </li>
+
+  <li>
+    Developed Rust helper tools for standalone exporting and translator-friendly localisation, including a localisation app that generates the required JSON files automatically so translators do not need to manage project paths or technical setup manually.
+  </li>
+
+  <li>
+    Built the exporter in Rust for fast file-management-heavy workflows, with future plans for binary asset encoding, asset packing, and more robust standalone distribution support.
+  </li>
+</ul>
+
+
+  <!-- ═══════════════════════════════════════════════ PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+
+      <div class="section-header animate-on-scroll">
+        <span class="code-tag">// Projects</span>
+        <h2 class="section-title">More Projects</h2>
+        <p class="section-subtitle">Systems, graphics &amp; language tooling — built from scratch in C</p>
+      </div>
+
+      <!--
+        Project cards are generated dynamically from the PROJECTS array in script.js.
+        To add a new project: open script.js and add an object to the PROJECTS array.
+        See script.js for the full schema.
+      -->
+      <div class="projects-grid" id="projects-grid">
+        <!-- Populated by script.js renderProjects() -->
+        <!-- Add more projects in script.js PROJECTS array -->
+      </div>
+
+      <!-- Add more main (hardcoded) project sections here if you need custom layouts -->
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════ SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+
+      <div class="section-header animate-on-scroll">
+        <span class="code-tag">// Skills</span>
+        <h2 class="section-title">Technical Skills</h2>
+      </div>
+
+      <div class="skills-grid animate-on-scroll">
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Languages</h3>
+          <div class="skill-badges">
+            <span class="skill-badge skill-badge-cyan">C</span>
+            <span class="skill-badge skill-badge-cyan">C++</span>
+            <span class="skill-badge skill-badge-cyan">Rust</span>
+            <span class="skill-badge">Assembly</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Graphics &amp; Engine</h3>
+          <div class="skill-badges">
+            <span class="skill-badge skill-badge-purple">OpenGL</span>
+            <span class="skill-badge skill-badge-purple">Vulkan</span>
+            <span class="skill-badge skill-badge-purple">GLSL</span>
+            <span class="skill-badge skill-badge-purple">Slang</span>
+            <span class="skill-badge">SDL3</span>
+            <span class="skill-badge">OpenAL</span>
+            <span class="skill-badge">Box2D</span>
+            <span class="skill-badge">Unity</span>
+            <span class="skill-badge">ImGui</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Tools</h3>
+          <div class="skill-badges">
+            <span class="skill-badge">Git</span>
+            <span class="skill-badge">CMake</span>
+            <span class="skill-badge">CLion</span>
+            <span class="skill-badge">JSON/BSON</span>
+            <span class="skill-badge">Tracy Profiler</span>
+            <span class="skill-badge">Logisim Evolution</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Spoken Languages</h3>
+          <div class="skill-badges">
+            <span class="skill-badge">Turkish <span class="badge-note">Native</span></span>
+            <span class="skill-badge">English <span class="badge-note">IELTS 7.5</span></span>
+            <span class="skill-badge">Arabic <span class="badge-note">A2</span></span>
+          </div>
+        </div>
+
+      </div><!-- /skills-grid -->
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════ EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="container">
+
+      <div class="section-header animate-on-scroll">
+        <span class="code-tag">// Experience</span>
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+
+      <div class="timeline animate-on-scroll">
+
+        <article class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-top">
+              <div>
+                <h3 class="timeline-role">Software / Game Development Intern</h3>
+                <p class="timeline-company">AdresGezgini</p>
+              </div>
+              <span class="timeline-period">Jul 2024 – Aug 2024</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built a 2D game prototype and supported client website debugging by reproducing issues, testing fixes, and identifying front-end problems.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-top">
+              <div>
+                <h3 class="timeline-role">Software Testing Intern</h3>
+                <p class="timeline-company">London Success Academy</p>
+              </div>
+              <span class="timeline-period">Mar 2025 – Apr 2025</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Supported QA workflows by reproducing defects, documenting issues, and testing software behaviour against expected outcomes.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div><!-- /timeline -->
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════ EDUCATION -->
+  <section id="education" class="section section-tight">
+    <div class="container">
+
+      <div class="section-header animate-on-scroll">
+        <span class="code-tag">// Education</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+
+      <div class="edu-grid animate-on-scroll">
+
+        <div class="edu-card">
+          <span class="edu-icon" aria-hidden="true">🎓</span>
+          <div class="edu-body">
+            <h3 class="edu-school">Newcastle University</h3>
+            <p class="edu-degree">BSc Computer Science</p>
+            <p class="edu-meta">First Class Honours Expected · 2025 – 2028</p>
+            <p class="edu-meta">50% Vice-Chancellor's Excellence Scholarship</p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <span class="edu-icon" aria-hidden="true">🏫</span>
+          <div class="edu-body">
+            <h3 class="edu-school">METU Development Foundation High School</h3>
+            <p class="edu-degree">High School Diploma · Turkey</p>
+            <p class="edu-meta">GPA 84.3 / 100 · IELTS 7.5 · Graduated 2025</p>
+          </div>
+        </div>
+
+      </div><!-- /edu-grid -->
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════ ACTIVITIES -->
+  <section id="activities" class="section section-tight">
+    <div class="container">
+
+      <div class="section-header animate-on-scroll">
+        <span class="code-tag">// Activities</span>
+        <h2 class="section-title">Activities</h2>
+      </div>
+
+      <div class="activities-grid animate-on-scroll">
+
+        <div class="activity-card">
+          <span class="activity-icon" aria-hidden="true">🤖</span>
+          <h3 class="activity-title">Robotics Team Lead</h3>
+          <p class="activity-desc">Led a 5-member international competition team through technical design, build, and competition strategy.</p>
+        </div>
+
+        <div class="activity-card">
+          <span class="activity-icon" aria-hidden="true">🎮</span>
+          <h3 class="activity-title">Game Jam Leader</h3>
+          <p class="activity-desc">Led multiple 3–7 day game jam projects from concept to playable prototype, driving both design and implementation.</p>
+        </div>
+
+        <div class="activity-card">
+          <span class="activity-icon" aria-hidden="true">🎭</span>
+          <h3 class="activity-title">Theatre Production</h3>
+          <p class="activity-desc">Co-produced and performed in a paid stage play that was invited to perform at an international festival.</p>
+        </div>
+
+      </div><!-- /activities-grid -->
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════ FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>BM<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-tagline">Building engines, renderers &amp; low-level software — Newcastle, UK</p>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="https://github.com/BenBerke" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="mailto:berkememioglu@gmail.com">berkememioglu@gmail.com</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="assets/cv.pdf" download>Download CV</a>
+      </nav>
+      <p class="footer-copy">© 2025 Berke Memioglu</p>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
